@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { auth } from '../config/firebase';
 
-const API_BASE_URL = 'http://localhost:5000/api'; // Replace with your backend URL
+const API_BASE_URL = 'https://todo-list-backend-katomaran-hackathon-1.onrender.com/api'; // Backend URL for production
 
 const api = axios.create({
   baseURL: API_BASE_URL,

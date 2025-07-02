@@ -7,6 +7,8 @@ import axios from 'axios';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../config/firebase';
 
+const BACKEND_URL = 'https://todo-list-backend-katomaran-hackathon-1.onrender.com';
+
 const Login = () => {
   const { user, login, loading } = useAuth();
   const googleButtonRef = useRef(null);
@@ -19,7 +21,7 @@ const Login = () => {
         client_id: 'YOUR_GOOGLE_CLIENT_ID', // <-- Replace with your client ID
         callback: async (response) => {
           try {
-            const res = await axios.post('http://localhost:5000/api/auth/google', {
+            const res = await axios.post(`${BACKEND_URL}/api/auth/google`, {
               credential: response.credential,
             });
             localStorage.setItem('token', res.data.token);
@@ -55,7 +57,7 @@ const Login = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const idToken = await result.user.getIdToken();
-      const res = await axios.post('http://localhost:5000/api/auth/google', { token: idToken });
+      const res = await axios.post(`${BACKEND_URL}/api/auth/google`, { token: idToken });
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');
     } catch (err) {

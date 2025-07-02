@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import { useAuth } from '../context/AuthContext';
 
-const SOCKET_URL = 'http://localhost:5000'; // Replace with your backend URL
+const SOCKET_URL = 'https://todo-list-backend-katomaran-hackathon-1.onrender.com'; // Backend URL for production
 
 export const useSocket = (onTaskUpdate, onTaskShared) => {
   const socketRef = useRef(null);
