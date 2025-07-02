@@ -1,5 +1,7 @@
 # 📝 Todo Task Management Web App – Frontend
 
+“This project is a part of a hackathon run by katomaran.com"
+
 This is the **frontend** of the Todo Task Management Web Application built for a hackathon. It allows users to sign in with Google, manage personal and shared tasks, and see real-time updates. The frontend is deployed on **Netlify** and integrates with a Node.js backend and MongoDB.
 
 ---
